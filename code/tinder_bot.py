@@ -88,6 +88,20 @@ class TinderBot():
         self.find_and_execute_action(CLICK,'//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
         #remove second popup
         self.find_and_execute_action(CLICK,'//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
+        #remove "you received x likes"
+        sleep(0.5)
+        try: 
+            btn = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div[3]/button[1]')
+            btn.click()
+        except:
+            pass
+        #close tinder gold
+        sleep(0.5) 
+        try:
+            btn = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div[3]/button[2]')
+            btn.click()
+        except:
+            pass
 
     def like(self):
         self.find_and_execute_action(CLICK,'//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/div[4]/button')
@@ -96,6 +110,7 @@ class TinderBot():
         self.find_and_execute_action(CLICK,'//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/div[2]/button')
 
     def auto_swipe(self):
+        print("Entered auto_swipe function")
         sleep(10)
         while True:
             sleep(0.5)
@@ -204,6 +219,10 @@ class TinderBot():
 
 
 bot = TinderBot()
+print("bot made")
 bot.login()
+print("bot logged in")
 bot.auto_swipe()
-bot.message_all()
+print("bot swiped")
+#bot.message_all()
+#print("bot messaged")
