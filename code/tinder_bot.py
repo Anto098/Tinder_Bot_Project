@@ -20,7 +20,7 @@ class ActionType(Enum):
 CLICK = ActionType.CLICK
 INPUT = ActionType.INPUT
 
-PICKUP_LINES_FILE = "/home/anto/Documents/Tinder_Bot/Tinder_Bot_Project/code/borat_pickup_lines.json"
+PICKUP_LINES_FILE = "/home/anto/Documents/Tinder_Bot/Tinder_Bot_Project/code/pickup_lines.json"
 
 with open(PICKUP_LINES_FILE) as json_file:
     pickup_lines = json.load(json_file)
